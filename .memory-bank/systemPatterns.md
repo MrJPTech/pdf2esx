@@ -35,7 +35,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                    OUTPUT GENERATION                             │
 ├─────────────────────────────────────────────────────────────────┤
-│  HTML Template  │  PDF Export  │  Google Sheets  │  Email Send  │
+│  HTML Template  │  PDF Export  │  Local Storage  │  Download     │
 └─────────────────┴──────────────┴─────────────────┴──────────────┘
 ```
 
@@ -146,10 +146,10 @@ const roofMeasurements = await rooflink.getMeasurements(propertyId);
 const aerialPhotos = await rooflink.getPhotos(propertyId);
 ```
 
-### Google Sheets Integration
+### Local Data Storage (Optional)
 ```typescript
-// Append estimate data to tracking sheet
-await sheets.appendRow(spreadsheetId, {
+// Save estimate data locally or to Supabase
+const estimateRecord = {
   date: new Date(),
   claimNumber: estimate.claim.number,
   insuredName: estimate.insured.name,
@@ -158,7 +158,13 @@ await sheets.appendRow(spreadsheetId, {
   supplementRCV: estimate.supplementSummary.rcv,
   additionalValue: estimate.additionalClaimValue,
   status: 'Generated'
-});
+};
+
+// Option 1: Local JSON file
+await fs.writeFile(`./data/estimates/${estimate.claim.number}.json`, JSON.stringify(estimateRecord));
+
+// Option 2: Supabase (if configured)
+await supabase.from('estimates').insert(estimateRecord);
 ```
 
 ## Error Handling Patterns

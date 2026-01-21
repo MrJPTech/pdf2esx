@@ -29,8 +29,7 @@
 ### Phase 2: Automation (Target: Week 2)
 - [ ] OCR parsing automated
 - [ ] Rooflink API integration
-- [ ] Google Sheets automation
-- [ ] Email sending capability
+- [ ] Supabase integration (optional)
 
 ### Phase 3: Polish (Target: Week 3)
 - [ ] Error handling and validation

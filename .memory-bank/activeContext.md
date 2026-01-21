@@ -29,8 +29,7 @@
 - Use SVG template for best visual quality
 - OCR parsing for insurance PDF extraction
 - Rooflink API for photos and measurements
-- Google Sheets automation for tracking
-- Email integration for sending estimates
+- Optional Supabase integration for tracking
 
 **Timeline Mentioned:**
 - "Could have this working by Friday" - indicating quick MVP is feasible
@@ -46,15 +45,14 @@ From meeting notes:
 1. Which Rooflink API endpoints are available?
 2. What permissions does the API key provide?
 3. Preferred template styling (exact branding requirements)?
-4. Google Sheets structure for tracking?
+4. Data persistence approach (local files vs Supabase)?
 
 ## Next Steps
 1. [ ] Set up Node.js/Python project structure
 2. [ ] Implement PDF OCR parsing module
 3. [ ] Create HTML/SVG estimate template
 4. [ ] Integrate Rooflink API for photos
-5. [ ] Build Google Sheets automation
-6. [ ] Add email sending capability
+5. [ ] Add optional Supabase integration for data persistence
 
 ## Technical Decisions
 - **Decision**: Use HTML templates (easier to maintain) over SVG

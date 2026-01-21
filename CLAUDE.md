@@ -31,9 +31,7 @@ Roof-link transforms insurance scope PDFs into professional contractor supplemen
 
 ### Integrations
 - **Rooflink API**: Roof measurements, aerial photos
-- **Google Sheets API**: Claim tracking and logging
-- **SendGrid**: Email delivery
-- **Supabase**: (Optional) Data persistence
+- **Supabase**: (Optional) Data persistence and tracking
 
 ## Directory Structure
 
@@ -156,8 +154,12 @@ Check their developer documentation for `mcp-server-rooflink` or similar.
 Required in `.env.local`:
 ```
 ROOFLINK_API_KEY=           # Rooflink developer API key
-GOOGLE_SHEETS_API_KEY=      # Google Sheets API (optional)
-SENDGRID_API_KEY=           # Email sending (optional)
+ROOFLINK_BASE_URL=          # Rooflink API base URL
+
+# Optional: Supabase for data persistence
+SUPABASE_PROJECT_REF=       # Supabase project reference
+NEXT_PUBLIC_SUPABASE_URL=   # Supabase project URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=  # Supabase anonymous key
 ```
 
 ## Development Workflow
@@ -189,8 +191,7 @@ git commit -m "feat: description of changes"
 ### Phase 2: Automation (Week 2)
 1. [ ] Add OCR for scanned PDFs
 2. [ ] Integrate Rooflink API
-3. [ ] Add Google Sheets logging
-4. [ ] Implement email sending
+3. [ ] Add Supabase persistence (optional)
 
 ### Phase 3: Polish (Week 3)
 1. [ ] Build web UI for uploads
@@ -207,7 +208,6 @@ Key points from the meeting:
 - OCR parse insurance PDF → extract to template
 - Use SVG/HTML for professional output
 - Rooflink API for measurements and photos
-- Google automation for tracking
 - "Could have this working by Friday" - MVP is straightforward
 
 ## Related PRSMTECH Resources

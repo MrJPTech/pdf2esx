@@ -66,7 +66,7 @@ Meeting transcript mentioned both Python and Node.js as options
 - Better PDF libraries (Puppeteer for HTML→PDF)
 - Excellent async handling for API calls
 - TypeScript for type safety
-- npm ecosystem for integrations (Google, SendGrid, etc.)
+- npm ecosystem for integrations (Rooflink, Supabase)
 - Consistent with PRSMTECH stack (Next.js projects)
 
 **Alternative**: Python for OCR-heavy workloads (better ML libraries)
@@ -112,6 +112,5 @@ From meeting: "We could have that shit working by Friday"
 
 **Deferred to Phase 2**:
 - Automatic Rooflink integration
-- Google Sheets automation
-- Email sending
+- Supabase data persistence (optional)
 - Multi-tenant support

@@ -13,7 +13,7 @@ Roofing contractors need to:
 2. Extract line items, quantities, pricing, and property details via OCR
 3. Generate professional supplement estimates in a branded format
 4. Integrate with Rooflink API for roof measurements and photos
-5. Automate workflows: Google Sheets logging, email notifications
+5. Store data locally or via Supabase (optional persistence)
 
 ## Technology Stack
 
@@ -25,9 +25,7 @@ Roofing contractors need to:
 
 ### Integrations
 - **Rooflink API**: Roof measurements, aerial photos, property data
-- **Google Sheets API**: Data logging and tracking
-- **SendGrid**: Email notifications
-- **Supabase**: (Optional) Data persistence
+- **Supabase**: (Optional) Data persistence and tracking
 
 ## Key Features
 
@@ -49,13 +47,9 @@ Roofing contractors need to:
    - Fetch roof photos automatically
    - Get accurate measurements (squares, ridge length, etc.)
 
-2. **Google Automation**
-   - Add parsed data to Google Sheets
-   - Track claim status and follow-ups
-
-3. **Email Integration**
-   - Send estimates to insurance adjusters
-   - Notification workflows
+2. **Data Persistence (Optional)**
+   - Store estimates in Supabase
+   - Track claim status and history
 
 ### Phase 3: SaaS Features
 1. Multi-tenant support
