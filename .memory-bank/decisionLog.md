@@ -114,3 +114,38 @@ From meeting: "We could have that shit working by Friday"
 - Automatic Rooflink integration
 - Supabase data persistence (optional)
 - Multi-tenant support
+
+---
+
+### DEC-006: Remove SendGrid and Google Sheets
+**Date**: 2026-01-21
+**Status**: Approved
+
+**Context**:
+Simplify the initial implementation by removing external service dependencies that aren't core to the MVP.
+
+**Decision**: Remove SendGrid email and Google Sheets API integrations
+
+**Rationale**:
+- Email sending not critical for MVP (manual download sufficient)
+- Google Sheets adds complexity without immediate value
+- Supabase can handle persistence if needed later
+- Focus on core PDF→PDF transformation workflow
+
+**Consequences**:
+- Simpler .env.local configuration
+- Fewer API keys to manage
+- Can add integrations later if needed
+
+---
+
+### DEC-007: Public GitHub Repository
+**Date**: 2026-01-21
+**Status**: Approved
+
+**Decision**: Publish project as public repo `MrJPTech/pdf2esx`
+
+**Rationale**:
+- Enables collaboration with external contributors
+- PRSMTECH-styled README for professional presentation
+- builtbyai added as collaborator
