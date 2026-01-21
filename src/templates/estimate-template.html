@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{contractor.name}} - {{insured.name}} Insurance Estimate</title>
+  <style>
+    /* CSS Variables for Golden Nail Roofing Branding */
+    :root {
+      --gold-accent: #c9a227;
+      --gold-light: #f5e6b3;
+      --category-bg: #fff9e6;
+      --header-bg: #f5f5f5;
+      --border-color: #d0d0d0;
+      --text-dark: #333333;
+      --text-light: #666666;
+      --white: #ffffff;
+      --summary-header: #c9a227;
+    }
+
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: var(--text-dark);
+      background: var(--white);
+    }
+
+    /* Page Container */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.4in 0.5in;
+      background: var(--white);
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      border: 2px solid var(--gold-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14pt;
+      color: var(--text-dark);
+      flex-shrink: 0;
+    }
+
+    .company-info h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+      border-bottom: 2px solid var(--gold-accent);
+      padding-bottom: 2px;
+      display: inline-block;
+    }
+
+    .company-info p {
+      font-size: 8pt;
+      color: var(--text-light);
+      margin: 1px 0;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 8pt;
+    }
+
+    .header-right p {
+      margin: 1px 0;
+    }
+
+    .header-right strong {
+      color: var(--text-dark);
+    }
+
+    /* Contact Info Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-section p {
+      font-size: 8pt;
+      margin: 1px 0;
+    }
+
+    .contact-section strong {
+      color: var(--text-dark);
+    }
+
+    /* Title Section */
+    .title-section {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .title-section h2 {
+      font-size: 10pt;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+
+    .title-section h3 {
+      font-size: 10pt;
+      font-weight: bold;
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 10pt;
+      margin: 15px 0 10px 0;
+      padding: 5px;
+      background: var(--header-bg);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Line Items Table */
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-bottom: 10px;
+    }
+
+    .items-table th {
+      background: var(--header-bg);
+      border: 1px solid var(--border-color);
+      padding: 5px 3px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 7.5pt;
+    }
+
+    .items-table th:first-child {
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .items-table td {
+      border: 1px solid var(--border-color);
+      padding: 4px 3px;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .items-table td:first-child {
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .items-table .description-col {
+      width: 35%;
+    }
+
+    .category-row {
+      background: var(--category-bg);
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .category-row td {
+      padding: 4px 5px;
+      text-align: left;
+      border-left: none;
+      border-right: none;
+    }
+
+    .totals-row {
+      font-weight: bold;
+      background: var(--header-bg);
+    }
+
+    .totals-row td {
+      padding: 5px 3px;
+    }
+
+    /* Summary Section */
+    .summary-section {
+      margin-top: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .summary-header {
+      background: var(--summary-header);
+      color: var(--white);
+      text-align: center;
+      font-weight: bold;
+      font-size: 10pt;
+      padding: 8px;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .summary-table tr {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .summary-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .summary-table td {
+      padding: 6px 10px;
+      font-size: 9pt;
+    }
+
+    .summary-table td:last-child {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .summary-table .highlight-row {
+      font-weight: bold;
+    }
+
+    .summary-table .total-row {
+      font-weight: bold;
+      font-size: 10pt;
+    }
+
+    /* Pre-Loss Conditions */
+    .pre-loss-section {
+      margin-top: 20px;
+    }
+
+    .pre-loss-section h4 {
+      font-size: 9pt;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .pre-loss-list {
+      list-style: disc;
+      margin-left: 20px;
+      font-size: 8pt;
+    }
+
+    .pre-loss-list li {
+      margin-bottom: 3px;
+    }
+
+    /* Signature Section */
+    .signature-section {
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .signature-section p {
+      margin: 3px 0;
+      font-size: 9pt;
+    }
+
+    .signature-name {
+      font-weight: bold;
+      font-size: 11pt;
+      margin-bottom: 5px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      text-align: center;
+      font-size: 8pt;
+      color: var(--text-light);
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    /* Professional Standards Box */
+    .standards-box {
+      border: 1px solid var(--border-color);
+      margin-top: 20px;
+    }
+
+    .standards-header {
+      color: var(--gold-accent);
+      text-align: center;
+      font-weight: bold;
+      font-size: 10pt;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .standards-content {
+      padding: 15px;
+      font-size: 8pt;
+      text-align: center;
+    }
+
+    .standards-content p {
+      margin: 5px 0;
+    }
+
+    .standards-content strong {
+      color: var(--text-dark);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .page {
+        page-break-after: always;
+        margin: 0;
+        padding: 0.4in 0.5in;
+      }
+    }
+
+    /* Currency formatting helper */
+    .currency {
+      text-align: right;
+    }
+
+    .negative {
+      color: #c00;
+    }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1: Header + First Half of Line Items -->
+  <div class="page" id="page1">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <div class="logo-circle">GN</div>
+        <div class="company-info">
+          <h1>{{contractor.name}}</h1>
+          <p>{{contractor.address}}</p>
+          <p>{{contractor.city}} {{contractor.state}}, {{contractor.zip}} {{contractor.country}}</p>
+          <p>Office: {{contractor.phone}}</p>
+          <p>Email: {{contractor.email}}</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <p><strong>Carrier:</strong> {{carrier.name}}</p>
+        <p><strong>Claim #:</strong> {{claim.number}}</p>
+        <p><strong>Policy #:</strong> {{claim.policyNumber}}</p>
+        <p><strong>Type of Loss:</strong> {{claim.lossType}}</p>
+        <p><strong>Date of Loss:</strong> {{claim.lossDate}}</p>
+        <p>&nbsp;</p>
+        <p><strong>Insured:</strong> {{insured.name}}</p>
+        <p><strong>Property:</strong> {{insured.address}}</p>
+        <p>{{insured.city}}, {{insured.state}} {{insured.zip}}</p>
+        <p><strong>Insured Cell:</strong> {{insured.phone}}</p>
+        <p><strong>Insured Email:</strong> {{insured.email}}</p>
+      </div>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid">
+      <div class="contact-section">
+        <p><strong>Contractor Rep:</strong> {{contractor.rep}}</p>
+        <p><strong>Email:</strong> {{contractor.email}}</p>
+        <p><strong>Business:</strong> {{contractor.phone}}</p>
+      </div>
+      <div class="contact-section">
+        <p><strong>Claim Rep / Estimator:</strong> {{carrier.rep}}</p>
+        <p><strong>Carrier Phone:</strong> {{carrier.phone}}</p>
+        <p><strong>Carrier Email:</strong> {{carrier.email}}</p>
+        <p><strong>Date Inspected:</strong> {{claim.dateInspected}}</p>
+        <p><strong>Estimate Completed:</strong> {{claim.estimateCompleted}}</p>
+        <p><strong>Price List:</strong> {{claim.priceList}}</p>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="title-section">
+      <h2>{{estimateTitle}}</h2>
+      <h3>{{estimateSubtitle}}</h3>
+    </div>
+
+    <!-- Section Header -->
+    <div class="section-header">{{section}}</div>
+
+    <!-- Line Items Table - Page 1 -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th class="description-col">DESCRIPTION</th>
+          <th>QUANTITY</th>
+          <th>UNIT</th>
+          <th>TAX</th>
+          <th>RCV</th>
+          <th>AGE/LIFE</th>
+          <th>COND.</th>
+          <th>DEP %</th>
+          <th>DEPREC.</th>
+          <th>ACV</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{LINE_ITEMS_PAGE1}}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGE 2: Remaining Line Items + Summary -->
+  <div class="page" id="page2">
+    <!-- Continue Line Items Table -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th class="description-col">DESCRIPTION</th>
+          <th>QUANTITY</th>
+          <th>UNIT</th>
+          <th>TAX</th>
+          <th>RCV</th>
+          <th>AGE/LIFE</th>
+          <th>COND.</th>
+          <th>DEP %</th>
+          <th>DEPREC.</th>
+          <th>ACV</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{LINE_ITEMS_PAGE2}}
+        <!-- Totals Row -->
+        <tr class="totals-row">
+          <td colspan="3"><strong>Totals: {{section}}</strong></td>
+          <td class="currency">{{summary.taxTotal}}</td>
+          <td class="currency">{{summary.lineItemTotal}}</td>
+          <td colspan="3"></td>
+          <td class="currency negative">({{summary.depreciationTotal}})</td>
+          <td class="currency">{{summary.acvTotal}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Estimate Summary -->
+    <div class="summary-section">
+      <div class="summary-header">ESTIMATE SUMMARY</div>
+      <table class="summary-table">
+        <tr>
+          <td>Dwelling Line Items Subtotal</td>
+          <td>{{summary.lineItemTotal}}</td>
+        </tr>
+        <tr>
+          <td>Material Sales Tax ({{summary.materialSalesTaxRate}}%)</td>
+          <td>{{summary.materialSalesTax}}</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Revised Total Estimate (RCV)</td>
+          <td>{{summary.rcvTotal}}</td>
+        </tr>
+        <tr>
+          <td>Less Total Depreciation</td>
+          <td class="negative">({{summary.totalDepreciation}})</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Total Actual Cash Value (ACV)</td>
+          <td>{{summary.totalACV}}</td>
+        </tr>
+        <tr class="total-row">
+          <td>Additional Claim Value Recovered</td>
+          <td>{{summary.additionalClaimValue}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Pre-Loss Conditions -->
+    <div class="pre-loss-section">
+      <h4>Pre-Loss Conditions Documented (Detailed Inspection Findings):</h4>
+      <ul class="pre-loss-list">
+        {{PRE_LOSS_CONDITIONS}}
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Signature + Professional Standards -->
+  <div class="page" id="page3">
+    <!-- Continue Pre-Loss if needed -->
+    {{PRE_LOSS_CONTINUED}}
+
+    <!-- Signature Section -->
+    <div class="signature-section">
+      <p class="signature-name">{{contractor.rep}}</p>
+      <p>{{contractor.name}}</p>
+      <p>{{contractor.email}}</p>
+      <p>{{contractor.phone}}</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <p>{{footer.disclaimer}}</p>
+      <p>Generated: {{footer.generatedDate}}</p>
+    </div>
+
+    <!-- Professional Standards Box -->
+    <div class="standards-box">
+      <div class="standards-header">{{contractor.name}} - Professional Standards</div>
+      <div class="standards-content">
+        <p><strong>Quality Assurance:</strong> {{professionalStandards.qualityAssurance}}</p>
+        <p><strong>Documentation:</strong> {{professionalStandards.documentation}}</p>
+        <p><strong>Warranty:</strong> {{professionalStandards.warranty}}</p>
+        <p><strong>Contact:</strong> {{professionalStandards.contact}}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

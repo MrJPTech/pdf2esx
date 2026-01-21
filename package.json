@@ -1,0 +1,23 @@
+{
+  "name": "roof-link-pdf-generator",
+  "version": "1.0.0",
+  "description": "PDF generation POC for roofing insurance supplement estimates",
+  "main": "src/scripts/generate-pdf.js",
+  "scripts": {
+    "generate": "node src/scripts/generate-pdf.js",
+    "generate:charles": "node src/scripts/generate-pdf.js --data charles-johnson"
+  },
+  "keywords": [
+    "pdf",
+    "puppeteer",
+    "roofing",
+    "insurance",
+    "estimate",
+    "supplement"
+  ],
+  "author": "PRSMTECH",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^21.5.0"
+  }
+}

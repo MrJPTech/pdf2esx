@@ -1,0 +1,584 @@
+{
+  "contractor": {
+    "name": "Golden Nail Roofing",
+    "address": "2300 Valley View Ln Ste 106",
+    "city": "Irving",
+    "state": "TX",
+    "zip": "75062",
+    "country": "USA",
+    "phone": "(469) 389-0597",
+    "email": "supplement@goldennailroofing.com",
+    "rep": "Jalen Ward"
+  },
+  "carrier": {
+    "name": "FARMERS / Mid-Century Insurance Company of Texas",
+    "rep": "Barry Hollingsworth",
+    "phone": "(214) 813-5253",
+    "email": "myclaim@farmersinsurance.com"
+  },
+  "claim": {
+    "number": "7009280374-1",
+    "policyNumber": "0789381246",
+    "lossType": "Hail",
+    "lossDate": "05/16/2025",
+    "dateInspected": "08/18/2025",
+    "estimateCompleted": "08/19/2025",
+    "priceList": "TXDF8X AUG25"
+  },
+  "insured": {
+    "name": "Charles Johnson",
+    "address": "521 La Cresta Dr",
+    "city": "Red Oak",
+    "state": "TX",
+    "zip": "75154-5109",
+    "phone": "(214) 802-8209",
+    "email": "melbajohnson@swbell.net"
+  },
+  "estimateTitle": "Restoration/Service/Remodel",
+  "estimateSubtitle": "Supplement Estimate: Charles Johnson Property",
+  "section": "Roof - Dwelling",
+  "lineItems": [
+    {
+      "category": "TEAR-OFF & PREPARATION",
+      "items": [
+        {
+          "number": 1,
+          "description": "Tear off comp shingles - 3 tab",
+          "quantity": 29.40,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 2459.60,
+          "ageLife": "0/NA",
+          "condition": "Avg.",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 2459.60
+        },
+        {
+          "number": 2,
+          "description": "Additional charge for steep roof - 7/12 to 9/12 slope",
+          "quantity": 29.40,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 984.31,
+          "ageLife": "0/NA",
+          "condition": "Avg.",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 984.31
+        }
+      ]
+    },
+    {
+      "category": "DECK REPAIR",
+      "items": [
+        {
+          "number": 3,
+          "description": "Roof deck repair/replacement - storm damaged sections",
+          "quantity": 10.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 520.00,
+          "ageLife": "0/30 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 520.00
+        }
+      ]
+    },
+    {
+      "category": "UNDERLAYMENT SYSTEMS",
+      "items": [
+        {
+          "number": 4,
+          "description": "Felt underlayment - 15# or synthetic equivalent",
+          "quantity": 32.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 1323.84,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 1323.84
+        },
+        {
+          "number": 5,
+          "description": "Ice & water shield - eaves (entire perimeter per shingle Manu.Specs)",
+          "quantity": 14.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 2786.00,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 2786.00
+        },
+        {
+          "number": 6,
+          "description": "Ice & water shield - valley underlayment",
+          "quantity": 6.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 1194.00,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 1194.00
+        },
+        {
+          "number": 7,
+          "description": "Ice & water shield - additional valley underlayment",
+          "quantity": 4.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 796.00,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 796.00
+        },
+        {
+          "number": 8,
+          "description": "Ice & water shield - rake edges (wind-driven rain protection)",
+          "quantity": 8.00,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 1592.00,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 1592.00
+        },
+        {
+          "number": 9,
+          "description": "Ice & water shield - high wind areas",
+          "quantity": 6.30,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 1253.70,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 1253.70
+        },
+        {
+          "number": 10,
+          "description": "Ice & water shield - chimney perimeter (TWO chimneys)",
+          "quantity": 2.50,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 497.50,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 497.50
+        },
+        {
+          "number": 11,
+          "description": "Ice & water shield - skylight perimeter (ONE skylight)",
+          "quantity": 1.20,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 238.80,
+          "ageLife": "0/20 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 238.80
+        }
+      ]
+    },
+    {
+      "category": "DRIP EDGE & STARTER",
+      "items": [
+        {
+          "number": 12,
+          "description": "Drip edge - aluminum",
+          "quantity": 129.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 482.46,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 68.92,
+          "acv": 413.54
+        },
+        {
+          "number": 13,
+          "description": "Drip edge - additional sections discovered during tear-off",
+          "quantity": 60.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 224.40,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 32.06,
+          "acv": 192.34
+        },
+        {
+          "number": 14,
+          "description": "Starter strip - architectural shingle",
+          "quantity": 129.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 245.10,
+          "ageLife": "0/30 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 245.10
+        }
+      ]
+    },
+    {
+      "category": "VALLEY METAL",
+      "items": [
+        {
+          "number": 15,
+          "description": "Valley metal - discovered during tear-off",
+          "quantity": 80.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 1028.00,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 146.86,
+          "acv": 881.14
+        }
+      ]
+    },
+    {
+      "category": "SHINGLES",
+      "items": [
+        {
+          "number": 16,
+          "description": "Comp shingles - architectural - duration per sq",
+          "quantity": 29.40,
+          "unit": "SQ",
+          "taxable": true,
+          "rcv": 3147.56,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 524.59,
+          "acv": 2622.97
+        },
+        {
+          "number": 17,
+          "description": "Gable cornice strip - laminated",
+          "quantity": 21.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 76.70,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 10.96,
+          "acv": 65.74
+        },
+        {
+          "number": 18,
+          "description": "Hip & ridge shingles - architectural - per LF",
+          "quantity": 110.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 660.00,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 110.00,
+          "acv": 550.00
+        }
+      ]
+    },
+    {
+      "category": "VENTILATION SYSTEM",
+      "items": [
+        {
+          "number": 19,
+          "description": "Ridge vent system - continuous",
+          "quantity": 110.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 1980.00,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 282.86,
+          "acv": 1697.14
+        },
+        {
+          "number": 20,
+          "description": "Roof vent - turtle type (metal)",
+          "quantity": 8.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 629.68,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 90.00,
+          "acv": 539.68
+        },
+        {
+          "number": 21,
+          "description": "Roof vent - turbine type (standard)",
+          "quantity": 3.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 524.43,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 74.92,
+          "acv": 449.51
+        },
+        {
+          "number": 22,
+          "description": "Vent installation blocking - structural support",
+          "quantity": 15.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 120.00,
+          "ageLife": "0/NA",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 120.00
+        },
+        {
+          "number": 23,
+          "description": "Soffit/fascia repair - ventilation installation access",
+          "quantity": 20.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 700.00,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 116.67,
+          "acv": 583.33
+        }
+      ]
+    },
+    {
+      "category": "FLASHING SYSTEMS",
+      "items": [
+        {
+          "number": 24,
+          "description": "Transition flashing - roof plane changes",
+          "quantity": 40.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 600.00,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 85.74,
+          "acv": 514.26
+        }
+      ]
+    },
+    {
+      "category": "CHIMNEY WORK (TWO CHIMNEYS)",
+      "items": [
+        {
+          "number": 25,
+          "description": "Chimney flashing system - step & counter",
+          "quantity": 48.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 909.60,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 130.00,
+          "acv": 779.60
+        },
+        {
+          "number": 26,
+          "description": "Chimney counter flashing - complete system",
+          "quantity": 60.00,
+          "unit": "LF",
+          "taxable": true,
+          "rcv": 1320.00,
+          "ageLife": "5/35 yrs",
+          "condition": "Avg.",
+          "depPercent": 14.29,
+          "depreciation": 188.57,
+          "acv": 1131.43
+        },
+        {
+          "number": 27,
+          "description": "Cricket (saddle) installation - behind chimney (TWO units)",
+          "quantity": 2.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 1091.60,
+          "ageLife": "0/30 yrs",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 1091.60
+        },
+        {
+          "number": 28,
+          "description": "Chimney chase cover installation - galvanized",
+          "quantity": 2.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 855.74,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 142.62,
+          "acv": 713.12
+        },
+        {
+          "number": 29,
+          "description": "Flue cap installation - chimney",
+          "quantity": 2.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 431.50,
+          "ageLife": "5/25 yrs",
+          "condition": "Avg.",
+          "depPercent": 20,
+          "depreciation": 86.30,
+          "acv": 345.20
+        }
+      ]
+    },
+    {
+      "category": "SKYLIGHT WORK (ONE SKYLIGHT)",
+      "items": [
+        {
+          "number": 30,
+          "description": "Skylight flashing kit - curb-mounted",
+          "quantity": 1.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 425.90,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 71.00,
+          "acv": 354.90
+        },
+        {
+          "number": 31,
+          "description": "Skylight curb replacement - structural",
+          "quantity": 1.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 650.00,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 108.33,
+          "acv": 541.67
+        }
+      ]
+    },
+    {
+      "category": "PENETRATIONS",
+      "items": [
+        {
+          "number": 32,
+          "description": "Flashing - pipe jack",
+          "quantity": 7.00,
+          "unit": "EA",
+          "taxable": true,
+          "rcv": 424.76,
+          "ageLife": "5/30 yrs",
+          "condition": "Avg.",
+          "depPercent": 16.67,
+          "depreciation": 70.79,
+          "acv": 353.97
+        },
+        {
+          "number": 33,
+          "description": "Prime & paint roof jack",
+          "quantity": 7.00,
+          "unit": "EA",
+          "taxable": false,
+          "rcv": 327.60,
+          "ageLife": "0/NA",
+          "condition": "New",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 327.60
+        }
+      ]
+    },
+    {
+      "category": "DETACH & RESET",
+      "items": [
+        {
+          "number": 34,
+          "description": "Digital satellite system - detach & reset",
+          "quantity": 2.00,
+          "unit": "EA",
+          "taxable": false,
+          "rcv": 144.51,
+          "ageLife": "0/NA",
+          "condition": "Exist",
+          "depPercent": 0,
+          "depreciation": 0,
+          "acv": 144.51
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "taxTotal": 2605.64,
+    "lineItemTotal": 31105.29,
+    "depreciationTotal": 2342.19,
+    "acvTotal": 28763.10,
+    "materialSalesTaxRate": 8.25,
+    "materialSalesTax": 2605.64,
+    "rcvTotal": 33710.93,
+    "totalDepreciation": 2342.19,
+    "totalACV": 31368.74,
+    "additionalClaimValue": 19674.74
+  },
+  "preLossConditions": [
+    "TWO masonry chimneys with complete chase cover and counter flashing systems",
+    "ONE curb-mounted skylight with manufacturer-specific flashing and curb assembly",
+    "Open valley metal system totaling 200 linear feet (primary and additional sections)",
+    "Continuous ridge ventilation system (110 LF) for code-compliant attic ventilation",
+    "Eaves ice & water shield protection (entire perimeter per shingle Manu.Specs)",
+    "Rake edge ice & water shield for wind-driven rain protection",
+    "Additional ice & water shield in high wind exposure areas (6.3 SQ)",
+    "High-performance synthetic underlayment system (32 SQ total)",
+    "Soffit/fascia access points for proper ventilation installation",
+    "Rubber pipe jack boots on all penetrations (7 total)",
+    "Additional code-compliant roof jacks for structural integrity (4 EA)",
+    "Storm-damaged roof deck sections requiring replacement (10 SQ)",
+    "Additional drip edge sections discovered during tear-off (60 LF)",
+    "Transition flashing at roof plane changes (40 LF)",
+    "Vent installation blocking for structural support (15 LF)",
+    "All supplement items represent existing components requiring code-compliant replacement"
+  ],
+  "footer": {
+    "disclaimer": "This supplement estimate is based on industry standard practices, building codes, and manufacturer specifications. All work will be performed in accordance with Texas building codes and manufacturer warranties.",
+    "generatedDate": "January 2026"
+  },
+  "professionalStandards": {
+    "qualityAssurance": "All estimates follow insurance industry standards and Texas building codes.",
+    "documentation": "Photo evidence and building code references available upon request.",
+    "warranty": "All supplement work backed by Golden Nail Roofing's comprehensive warranty program.",
+    "contact": "For questions about this estimate, contact Jalen Ward at (469) 389-0597."
+  }
+}

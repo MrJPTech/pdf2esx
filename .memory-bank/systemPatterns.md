@@ -221,3 +221,93 @@ try {
 - `.line-items-table` - Main estimate table
 - `.summary-section` - Totals and calculations
 - `.footer` - Contact info and disclaimers
+
+---
+
+## Implemented Patterns (2026-01-21)
+
+### PDF Generation Pipeline
+```javascript
+// src/scripts/generate-pdf.js pattern
+const puppeteer = require('puppeteer');
+
+async function generatePDF(dataFile) {
+  // 1. Load JSON data
+  const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+
+  // 2. Load and populate HTML template
+  let template = fs.readFileSync(templatePath, 'utf8');
+  const populatedHTML = populateTemplate(template, data);
+
+  // 3. Launch Puppeteer
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+
+  // 4. Generate PDF
+  const page = await browser.newPage();
+  await page.setContent(populatedHTML, { waitUntil: 'networkidle0' });
+  await page.pdf({
+    path: outputPath,
+    format: 'Letter',
+    printBackground: true,  // Critical for colors
+    margin: { top: '0in', right: '0in', bottom: '0in', left: '0in' }
+  });
+
+  await browser.close();
+}
+```
+
+### Template Placeholder Pattern
+```javascript
+// Simple {{variable}} replacement
+function populateTemplate(template, data) {
+  // Replace nested objects: {{contractor.name}}
+  // Replace arrays: {{LINE_ITEMS_PAGE1}}
+  // Format currency: formatCurrency(value)
+}
+```
+
+### JSON Data Structure (Implemented)
+```json
+{
+  "contractor": { "name", "address", "city", "state", "zip", "phone", "email", "rep" },
+  "carrier": { "name", "phone", "email", "rep" },
+  "claim": { "number", "policyNumber", "lossType", "lossDate", "dateInspected", "estimateCompleted", "priceList" },
+  "insured": { "name", "address", "city", "state", "zip", "phone", "email" },
+  "estimateTitle": "Restoration/Service/Remodel",
+  "estimateSubtitle": "Supplement Estimate: Charles Johnson Property",
+  "section": "Roof - Dwelling",
+  "lineItems": [
+    {
+      "category": "TEAR-OFF & PREPARATION",
+      "items": [
+        { "description", "quantity", "unit", "tax", "rcv", "ageLife", "condition", "depPercent", "depreciation", "acv" }
+      ]
+    }
+  ],
+  "summary": { "taxTotal", "lineItemTotal", "depreciationTotal", "acvTotal", "materialSalesTaxRate", "materialSalesTax", "rcvTotal", "totalDepreciation", "totalACV", "additionalClaimValue" },
+  "preLossConditions": ["Condition 1", "Condition 2", ...],
+  "footer": { "disclaimer", "generatedDate" },
+  "professionalStandards": { "qualityAssurance", "documentation", "warranty", "contact" }
+}
+```
+
+### CSS Variables for Branding
+```css
+:root {
+  --gold-accent: #c9a227;      /* Golden yellow for headers */
+  --gold-light: #f5e6b3;
+  --category-bg: #fff9e6;      /* Light yellow for category rows */
+  --header-bg: #f5f5f5;        /* Light gray for table headers */
+  --border-color: #d0d0d0;
+  --text-dark: #333333;
+  --summary-header: #c9a227;   /* Gold header bar */
+}
+```
+
+### Page Layout Pattern (3-page)
+- **Page 1**: Header + Contact Grid + First half of line items
+- **Page 2**: Remaining line items + Totals + Summary + Pre-loss conditions
+- **Page 3**: Continued pre-loss + Signature + Disclaimer + Professional standards box

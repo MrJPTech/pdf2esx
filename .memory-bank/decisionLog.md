@@ -149,3 +149,63 @@ Simplify the initial implementation by removing external service dependencies th
 - Enables collaboration with external contributors
 - PRSMTECH-styled README for professional presentation
 - builtbyai added as collaborator
+
+---
+
+### DEC-008: Puppeteer v21.5.0 for PDF Generation
+**Date**: 2026-01-21
+**Status**: Approved
+
+**Context**:
+Needed to choose PDF generation approach for the POC pipeline.
+
+**Decision**: Use Puppeteer v21.5.0 with HTML→PDF conversion
+
+**Rationale**:
+- Proven pattern from external-client/tokn-cook project
+- `printBackground: true` preserves colors and backgrounds
+- `waitUntil: 'networkidle0'` ensures all resources loaded
+- Letter format (8.5" x 11") for professional output
+- CSS variables enable easy contractor branding customization
+
+**Key Settings**:
+```javascript
+await page.pdf({
+  format: 'Letter',
+  printBackground: true,
+  margin: { top: '0in', right: '0in', bottom: '0in', left: '0in' }
+});
+```
+
+**Consequences**:
+- 79 KB output (very efficient)
+- Professional 3-page layout achieved
+- Easy template maintenance via HTML/CSS
+
+---
+
+### DEC-009: JSON Data Structure for Estimates
+**Date**: 2026-01-21
+**Status**: Approved
+
+**Decision**: Use flat JSON structure with categorized line items
+
+**Data Structure**:
+```json
+{
+  "contractor": {...},
+  "carrier": {...},
+  "claim": {...},
+  "insured": {...},
+  "lineItems": [{ "category": "...", "items": [...] }],
+  "summary": {...},
+  "preLossConditions": [...],
+  "professionalStandards": {...}
+}
+```
+
+**Rationale**:
+- Easy to parse from OCR output
+- Supports multiple categories of line items
+- Includes all fields from sample PDF
+- Extensible for future enhancements

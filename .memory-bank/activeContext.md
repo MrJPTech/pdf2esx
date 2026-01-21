@@ -1,13 +1,23 @@
 # Active Context - Roof-link (pdf2esx)
 
 ## Current Focus
-- GitHub repository created and configured
-- Project ready for Phase 1 development
-- Next: Set up Node.js project structure and begin PDF parsing
+- **PDF Pipeline POC Complete** ✅
+- Puppeteer-based HTML→PDF generation working
+- Ready for OCR parsing phase (user will upload additional PDFs)
 
-## Session: 2026-01-21
+## Session: 2026-01-21 (Afternoon)
 
 ### Completed This Session
+- [x] Created Node.js project structure (src/templates, src/data, src/scripts, output)
+- [x] Created package.json with Puppeteer v21.5.0 dependency
+- [x] Installed npm dependencies (Puppeteer + Chromium)
+- [x] Created comprehensive charles-johnson.json sample data (34 line items)
+- [x] Created estimate-template.html with Golden Nail Roofing branding
+- [x] Created generate-pdf.js Puppeteer conversion script
+- [x] Successfully tested PDF generation (79 KB output)
+- [x] Verified output: `output/Golden Nail Roofing - Charles Johnson Insurance Estimate.pdf`
+
+### Previous Session (Morning)
 - [x] Analyzed meeting transcription for requirements
 - [x] Examined input PDF (Farmers Insurance scope)
 - [x] Examined output PDF (Golden Nail Roofing estimate)
@@ -49,17 +59,40 @@ From meeting notes:
 ## Open Questions
 1. Which Rooflink API endpoints are available?
 2. What permissions does the API key provide?
-3. Preferred template styling (exact branding requirements)?
-4. Data persistence approach (local files vs Supabase)?
+3. Data persistence approach (local files vs Supabase)?
 
-## Next Steps
-1. [ ] Set up Node.js/Python project structure
-2. [ ] Implement PDF OCR parsing module
-3. [ ] Create HTML/SVG estimate template
-4. [ ] Integrate Rooflink API for photos
-5. [ ] Add optional Supabase integration for data persistence
+## Next Steps (Phase 2)
+1. [x] ~~Set up Node.js project structure~~ ✅ DONE
+2. [x] ~~Create HTML estimate template~~ ✅ DONE
+3. [x] ~~Test PDF generation pipeline~~ ✅ DONE (79 KB PDF generated)
+4. [ ] Add OCR parsing for insurance PDFs (Tesseract.js or pdf-parse)
+5. [ ] Integrate Rooflink API for measurements/photos
+6. [ ] Add optional Supabase integration for data persistence
+
+## Files Created This Session
+```
+src/
+├── data/
+│   └── charles-johnson.json    # 34 line items, full sample data
+├── templates/
+│   └── estimate-template.html  # Golden Nail branding, 3-page layout
+├── scripts/
+│   └── generate-pdf.js         # Puppeteer conversion script
+output/
+└── Golden Nail Roofing - Charles Johnson Insurance Estimate.pdf (79 KB)
+```
+
+## Commands Available
+```bash
+npm run generate                        # Generate with default data
+npm run generate -- --data charles-johnson  # Explicit data file
+```
 
 ## Technical Decisions
 - **Decision**: Use HTML templates (easier to maintain) over SVG
 - **Rationale**: HTML can include dynamic data more easily, PDF libraries support HTML well
+- **Decision Logged**: 2026-01-21
+
+- **Decision**: Use Puppeteer v21.5.0 (proven pattern from external-client project)
+- **Key Settings**: `printBackground: true`, `waitUntil: 'networkidle0'`, Letter format
 - **Decision Logged**: 2026-01-21
